@@ -8,6 +8,35 @@ body {
   font-family: Sora;
 }
 
+h1 {
+  color: white;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.8em;
+}
+
+h4 {
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+}
+
+footer {
+  width: 100%;
+  padding: 4rem 0;
+  background-color: rgb(10, 0, 146);
+}
+
+h5 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
 .header-container {
   width: 80%;
   display: flex;
@@ -44,14 +73,28 @@ body {
 
     a {
       color: white;
+      position: relative;
       text-decoration: none;
     }
   }
 }
 
-@font-face {
-  font-family: Sora;
-  src: url(./fonts/Sora-VariableFont_wght.ttf);
+.header-nav a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+
+.header-nav a:hover::before {
+  transform: scaleX(1);
 }
 
 .button {
@@ -127,13 +170,6 @@ body {
     font-weight: 500;
     letter-spacing: 0.3rem;
   }
-}
-
-h1 {
-  color: white;
-  font-size: 4rem;
-  font-weight: 500;
-  letter-spacing: 5px;
 }
 
 .main-right {
@@ -246,11 +282,6 @@ h1 {
     rgba(87, 25, 122, 1) 5%,
     rgba(108, 17, 35, 1) 100%
   );
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 1.8em;
 }
 
 .card-button {
@@ -431,23 +462,6 @@ input:focus {
   gap: 2rem;
 }
 
-h4 {
-  font-size: 4rem;
-  font-weight: 400;
-  letter-spacing: 0.5rem;
-}
-
-footer {
-  width: 100%;
-  padding: 4rem 0;
-  background-color: rgb(10, 0, 146);
-}
-
-h5 {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
 .footer-container {
   width: 80%;
   margin: auto;
@@ -499,7 +513,7 @@ h5 {
 }
 
 li:hover {
-  opacity: 0.6;
+  color: rgb(255, 255, 255);
 }
 
 @media (min-width: 576px) {
@@ -640,4 +654,9 @@ li:hover {
   .card-button {
     width: 40%;
   }
+}
+
+@font-face {
+  font-family: Sora;
+  src: url(./fonts/Sora-VariableFont_wght.ttf);
 }
